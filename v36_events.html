@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="images">
+        <li>
+            <img id="pic" width="100px" height="100px" src="DSC_0936.JPG" alt="shadi" >
+        </li>
+        <li>
+            <img id="pic2" width="100px" height="100px" src="DSC_0936.JPG" alt="shadii" >
+        </li>
+        <li ><a id="g" href="https://www.google.com/search?q=google&oq=&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIGCAAQRRg8MgYIARBFGDsyDQgCEAAYgwEYsQMYgAQyBggDEEUYOTIGCAQQRRg7MgoIBRAAGLEDGIAEMgYIBhBFGDwyBggHEEUYPDIGCAgQRRg80gEIMzUwM2owajGoAgCwAgA&sourceid=chrome&ie=UTF-8">google</a></li>
+    </ul>
+</body>
+<script>
+   // document.getElementById('pic').onclick = function(){
+   //     alert('d');
+   // }
+   // attachEvent() - old method
+   // jQuery - on ->old method
+
+
+   // above technique gives less functionalities, so we use event listeners, it has 3 parametrs last one default false
+
+   //type,timestamp, defaultPrevented, target , toelement, srcElement,
+   //currentTarget, clientX, clientY, screenX, screenY , altKey, ctrlkey, shiftKey, keycode
+  // document.getElementById('images').addEventListener('click',function(e){
+  //  console.log('clicked inside ul');
+  // })   
+  // document.getElementById('pic').addEventListener('click',function(e){
+  //  console.log('owl clicked')
+  //  e.stopPropagation()  // stops propagation
+  // })   
+   // false -> bubbling bottom to top - means the propgation is from inside to outside
+   // false ->  capturing top to bottom - means the propgation is from outside to inside
+
+  // document.getElementById('g').addEventListener('click',function(e){
+  //  console.log('google clicked')
+  //  e.preventDefault();
+  //  e.stopPropagation()
+  // })
+   
+
+   document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+        //removeIt.parentNode.removeChild(removeIt);
+    });
+</script>
+</html>

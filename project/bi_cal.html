@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>bmi cal
+    </p>
+    <form action="">
+        <label for="">weight</label>
+        <input type="text" name="" id="w"><br>
+        <label for="">height</label>
+        <input type="text" name="" id="h"><br>
+        <button type="submit">cal</button>
+    </form>
+    <span>result</span>
+    <span id="res" style="border: 2px solid black;padding-left:2px;padding-right:2px"></span>
+
+    <span id="res1" style="border: 2px solid black;padding-left:2px;padding-right:2px"></span>
+</body>
+
+<script>
+    //const h=document.querySelector('h'); -> this does not work properly becoz it takes val when page loads so use eventlistener
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit',function(e){
+        e.preventDefault();
+        const w=parseInt(document.querySelector('#w').value);
+        const h=parseInt(document.querySelector('#h').value);
+        const res=document.querySelector('#res');
+        let bmi;
+        if(h==='' || h<0 || isNaN(h)){
+            res.innerHTML='Pls give valid val'
+        }
+        else if(w==='' || w<0 || isNaN(w)){
+            res.innerHTML='Pls give valid val'
+        }
+        else{
+            bmi= (w/((h*h)/1000).toFixed(2));
+            res.innerHTML =bmi
+        }
+
+        if(bmi<20){
+            res1.innerHTML='u are underwt'
+        }
+        else if(bmi>20 && bmi<40){
+            res1.innerHTML='u are underwt'
+        }
+        else{
+            res1.innerHTML='u are underwt'
+        }
+    })
+
+</script>
+</html>

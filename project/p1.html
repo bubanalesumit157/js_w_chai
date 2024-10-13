@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="b">
+    <button   class="button" onclick="changeColor(black)" id="black" style="background-color:black;width:100px;height:100px">
+
+    </button>
+    <button class="button"  onclick="changeColor(aqua)" id="aqua" style="background-color: aqua;width:100px;height:100px">
+
+    </button>
+    <button  class="button" onclick="changeColor(brown)" id="brown" style="background-color:brown;width:100px;height:100px">
+
+    </button>
+    <button  class="button"onclick="changeColor(blue)" id="blue" style="background-color:blue;width:100px;height:100px">
+
+    </button>
+
+    
+
+    <p>click to change the color</p>
+    <script>
+     //   function changeColor(color){
+     //       
+      //      b1.style.backgroundColor = color;
+      //  }
+
+
+        const body=document.getElementById('b');
+        const button=document.querySelectorAll('.button');
+
+        button.forEach(function (button){
+            console.log(button)
+            button.addEventListener('click',function(e){
+                console.log(e);
+                console.log(e.target)
+                if(e.target.id==='brown'){
+                    body.style.backgroundColor=e.target.id;
+                }
+                if(e.target.id === 'blue'){
+                    body.style.backgroundColor=e.target.id;
+                }
+                if(e.target.id === 'aqua'){
+                    body.style.backgroundColor=e.target.id;
+                }
+                if(e.target.id === 'black'){
+                    body.style.backgroundColor=e.target.id;
+                }
+
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+const mydate = new Date()
+console.log(typeof mydate)
+console.log(mydate.toString())
+console.log(mydate.toLocaleString())
+
+let d = new Date(2023,4,23,5,7)
+console.log(d.toString())
+let d1 = new Date("01-14-2023")
+console.log(d1.toString())
+let mytimestamp = Date.now()
+console.log(mytimestamp)
+console.log(d1.getTime)
+console.log(Math.floor(mytimestamp/1000))
+console.log(d.getFullYear())
+
+// mydate.toLocaleString()

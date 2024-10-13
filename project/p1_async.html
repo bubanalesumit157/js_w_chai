@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>sumit js</h1>
+    <button id="stop">stop</button>
+
+</body>
+<script>
+const changetext = function(){
+    document.querySelector('h1').innerHTML="hey this is sumit";
+}
+    const hey=function(){
+        console.log('sumit')
+    }
+    
+    const changeMe = setTimeout(changetext,5000);   //here we give reference of function not call it
+    //  clearTimeout(changeme);
+    document.getElementById('stop').addEventListener('click',function(e){
+        clearTimeout(changeMe);
+        console.log('stopped');
+    })
+
+</script>
+</html>

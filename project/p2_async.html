@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>sumit on js</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    const sayDate = function(msg){
+        console.log(msg,Date.now());
+    }
+    let date;
+    document.querySelector('#start').addEventListener('click',function(){
+    date = setInterval(sayDate,1000,"sumit")
+    });
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(date);
+        date = null;
+    })
+    
+</script>
+</html>
